@@ -122,14 +122,17 @@ def information_agence(request, localisation_id):
     return render(request, 'information_agence.html', {'infos': infos, 'localisation': localisation})
 
 # Vue pour gérer le formulaire de contact
+from django.http import JsonResponse
+
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('contact')
+            #  Sauvegarde du formulaire dans la base de données
+            return JsonResponse({'message': 'Form submitted successfully'})# Retourne un message JSON en cas de succès
     else:
-        form = ContactForm()
+        form = ContactForm()  # Create a new instance of the form for GET requests
+
     return render(request, 'contact.html', {'form': form})
 
 def telecharger_inventaires(request):# Vue pour télécharger les inventaires au format CSV

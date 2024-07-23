@@ -16,5 +16,5 @@ urlpatterns = [
     path('localisations/', views.localisations, name='localisations'),
     path('localisation/<int:localisation_id>/', views.information_agence, name='information_agence'),
     path('contact/', views.contact, name='contact'),
-    path('demande-devis/', views.demande_devis, name='demande_devis'),
+    path('demande_devis/', views.demande_devis, name='demande_devis'),
 ]

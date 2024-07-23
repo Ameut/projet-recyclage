@@ -55,16 +55,26 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#home">Accueil</a>
+              <a class="nav-link" href="/">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">À propos</a>
+              <a class="nav-link" href="/economie-circulaire"
+                >Economie circulaire</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#services">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <form method="post" action="{% url 'temoignages' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">
+                  Témoignage
+                </button>
+              </form>
             </li>
           </ul>
         </div>
@@ -72,9 +82,9 @@
       <div class="banner">
         <h1>Sud recycling</h1>
         <div class="banner-buttons">
-          <button class="btn btn-primary">Login</button>
-          <button class="btn btn-devis">Devis</button>
-          <button class="btn btn-devis">Inventaire</button>
+          <a class="btn btn-primary" href="/admin">Login</a>
+          <a class="btn btn-devis" href="/demande_devis">Devis</a>
+          <a class="btn btn-devis" href="/inventaires">Inventaire</a>
         </div>
       </div>
     </header>
@@ -91,10 +101,8 @@
 
       <section id="temoignages" class="content">
         <div class="text">
-          <h2>Témoignages</h2>
           <form method="post" action="{% url 'temoignages' %}">
             {% csrf_token %} {{ form.as_p }}
-            <button type="submit">Soumettre</button>
           </form>
         </div>
         <div
