@@ -57,4 +57,9 @@ class InformationAgenceAdmin(admin.ModelAdmin):
 class BalleAdmin(admin.ModelAdmin):
     list_display = ('nom',)
     search_fields = ('nom',)
+    
+from .nosql_models import Material, Transaction
+
+admin.site.register(Material)
+admin.site.register(Transaction)
 

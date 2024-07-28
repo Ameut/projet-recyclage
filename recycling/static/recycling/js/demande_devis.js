@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('demande-devis-form').addEventListener('submit', function(event) {
         event.preventDefault();
         const formData = new FormData(this);
-        
+
         fetch('/demande-devis/', {
             method: 'POST',
             body: formData,

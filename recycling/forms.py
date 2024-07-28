@@ -62,3 +62,29 @@ class DemandeDevisForm(forms.ModelForm):
         fields = ['nom', 'email', 'telephone', 'message', 'matieres', 'localisation']
 
     localisation = forms.ModelChoiceField(queryset=Localisation.objects.all(), empty_label="Sélectionnez une localisation")
+    
+    
+from django import forms
+from django.conf import settings
+
+class TransactionForm(forms.Form):
+    # Champ de sélection pour les matériaux, initialement vide
+    material = forms.ChoiceField(choices=[])
+    # Champ pour entrer la quantité de matériau
+    quantity = forms.FloatField()
+
+    # On surcharge la méthode __init__ pour modifier les choix du champ 'material'
+    def __init__(self, *args, **kwargs):
+        super(TransactionForm, self).__init__(*args, **kwargs)
+        # Met à jour les choix disponibles pour le champ 'material'
+        self.fields['material'].choices = self.get_material_choices()
+
+    # Méthode pour récupérer les choix des matériaux depuis la base de données MongoDB
+    def get_material_choices(self):
+        # Accéder à la base de données MongoDB via les paramètres de configuration de Django
+        db = settings.MONGO_DB
+        # Récupérer tous les matériaux de la collection 'material'
+        materials = db.material.find()
+        # Créer une liste de tuples (nom, nom) pour les choix du champ 'material'
+        choices = [(material['name'], material['name']) for material in materials]
+        return choices  # Retourner la liste de choix

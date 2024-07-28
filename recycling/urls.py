@@ -1,5 +1,5 @@
 
-from .views import inventaires, supprimer_inventaire, telecharger_inventaires
+from .views import inventaires, supprimer_inventaire, telecharger_inventaires, information_agence
 
 from django.urls import path
 from . import views
@@ -16,5 +16,8 @@ urlpatterns = [
     path('localisations/', views.localisations, name='localisations'),
     path('localisation/<int:localisation_id>/', views.information_agence, name='information_agence'),
     path('contact/', views.contact, name='contact'),
-    path('demande_devis/', views.demande_devis, name='demande_devis'),
+    path('demande-devis/', views.demande_devis, name='demande_devis'),
+    path('information_agence/', information_agence, name='information_agence'),
+    path('add_and_calculate/', views.add_and_calculate, name='add_and_calculate'),
+
 ]

@@ -1,0 +1,21 @@
+{% load static %}
+<!-- recycling/templates/add_and_calculate.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CO2 Calculator</title>
+  </head>
+  <body>
+    <h1>CO2 Calculator</h1>
+
+    <h2>Add Transaction</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Add</button>
+    </form>
+
+    <h2>Total CO2 Saved</h2>
+    <p>{{ total_co2_saved }} kg</p>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from django.db.models import Count
-from .models import PageIndex, PageEconomieCirculaire, DemandeDevis, Temoin, Inventaire, Localisation, InformationAgence, Contact, Matiere, Balle
+from .models import PageIndex, PageEconomieCirculaire, DemandeDevis, Temoin, Inventaire, Localisation, InformationAgence, Contact, Matiere, Balle,Localisation
 from .forms import ContactForm, InventaireForm, BalleForm, DemandeDevisForm
 from django.http import JsonResponse
 import csv
@@ -22,21 +22,19 @@ def economie_circulaire(request):
     return render(request, 'economie_circulaire.html', {'pages': page_economie})
 
 # Vue pour afficher les demandes de devis
+from .forms import DemandeDevisForm
+
 def demande_devis(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         form = DemandeDevisForm(request.POST)
         if form.is_valid():
-            form.save()
-            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-                return JsonResponse({'success': True})
-            else:
-                return redirect('success_page')
+            # Traitez les données du formulaire
+            return JsonResponse({'success': True})
         else:
-            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-                return JsonResponse({'success': False})
+            return JsonResponse({'success': False, 'errors': form.errors})
     else:
         form = DemandeDevisForm()
-    return render(request, 'demande_devis.html', {'form': form})
+    return render(request, 'demande-devis.html', {'form': form})
 
 from .models import Temoin
 from .forms import TemoinForm
@@ -197,4 +195,38 @@ def recuperer_balles(request):
     balles = Balle.objects.all()
     return render(request, 'balles.html', {'balles': balles})
 
+from django.shortcuts import render, redirect
+from .forms import TransactionForm
+from .utils import save_transaction, get_total_co2_saved, reset_transactions
 
+# Vue pour ajouter une transaction de recyclage et calculer le CO2 total économisé
+def add_and_calculate(request):
+    # Si la requête est de type POST, cela signifie que le formulaire a été soumis
+    if request.method == 'POST':
+        form = TransactionForm(request.POST)  # Créez une instance du formulaire avec les données soumises
+        # Vérifiez si le formulaire est valide
+        if form.is_valid():
+            # Récupérez les données validées du formulaire
+            material = form.cleaned_data['material']
+            quantity = form.cleaned_data['quantity']
+            # Réinitialisez les transactions avant d'ajouter une nouvelle transaction
+            reset_transactions()
+            # Sauvegardez la nouvelle transaction dans la base de données
+            transaction = save_transaction(material, quantity)
+            # Vérifiez si la transaction a été sauvegardée avec succès
+            if transaction:
+                print(f"Transaction saved: {transaction}")
+            else:
+                print("Failed to save transaction.")
+            # Redirigez vers la même vue pour afficher le formulaire vide et le total mis à jour
+            return redirect('add_and_calculate')
+        else:
+            print("Form is not valid.")  # Affichez un message si le formulaire n'est pas valide
+    else:
+        form = TransactionForm()  # Créez une instance vide du formulaire si la requête n'est pas de type POST
+
+    # Calculez le total du CO2 économisé à partir des transactions sauvegardées
+    total_co2_saved = get_total_co2_saved()
+    print(f"Total CO2 saved: {total_co2_saved}")
+    # Rendre la page avec le formulaire et le total du CO2 économisé
+    return render(request, 'add_and_calculate.html', {'form': form, 'total_co2_saved': total_co2_saved})
