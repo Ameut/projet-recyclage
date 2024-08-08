@@ -1,21 +1,108 @@
 {% load static %}
-<!-- recycling/templates/add_and_calculate.html -->
-
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CO2 Calculator</title>
+    <link rel="stylesheet" href="{% static 'recycling/css/styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      .banner {
+        background: url("{% static 'recycling/images/banniere.jpg' %}")
+          no-repeat center center;
+        background-size: cover;
+        text-align: center;
+        padding: 5em 0;
+        color: white;
+        position: relative;
+      }
+      .banner-buttons {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+      }
+      .btn-devis {
+        background-color: green;
+        color: white;
+      }
+    </style>
   </head>
   <body>
-    <h1>CO2 Calculator</h1>
-
-    <h2>Add Transaction</h2>
-    <form method="post">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">Add</button>
-    </form>
-
-    <h2>Total CO2 Saved</h2>
-    <p>{{ total_co2_saved }} kg</p>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Sud Recycling</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/economie-circulaire"
+                >Economie circulaire</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/add_and_calculate">Calculateur CO2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <form method="post" action="{% url 'temoignages' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">
+                  Témoignage
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="banner">
+        <h1>CO2 Calculator</h1>
+        <div class="banner-buttons">
+          <a class="btn btn-primary" href="/admin">Login</a>
+          <a class="btn btn-devis" href="/demande-devis">Devis</a>
+          <a class="btn btn-devis" href="/inventaires">Inventaire</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="content">
+        <p>Calculer le taux de co2 non émis rentrer votre matiére</p>
+        <form method="post" id="transaction-form">
+          {% csrf_token %} {{ form.as_p }}
+          <button type="submit" class="btn btn-success">Calcul</button>
+        </form>
+        <h3>Total CO2 sauver</h3>
+        <p>{{ total_co2_saved }} kg</p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Sud Recycling.</p>
+      <div class="social-media">
+        <a href="#">Facebook</a> | <a href="#">X</a> | <a href="#">Instagram</a>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

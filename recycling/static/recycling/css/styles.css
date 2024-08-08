@@ -73,84 +73,6 @@ section {
     margin: 0 auto;
 }
 
-/* Image dans le contenu */
-.content img {
-    max-width: 45%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    margin-right: 10px;
-}
-
-/* Texte dans le contenu */
-.content .text {
-    max-width: 50%;
-    text-align: justify;
-    line-height: 1.6;
-    margin-bottom: 1em;
-    padding-left: 10px;
-}
-
-.content .text p {
-    margin-bottom: 1em;
-}
-
-/* Styles pour les tableaux */
-.styled-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 18px;
-    text-align: left;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
-}
-
-/* Styles pour le pied de page */
-footer {
-    background-color: #030303;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
-}
-
-footer .social-media a {
-    color: white;
-    margin: 0 0.5em;
-    text-decoration: none;
-}
-
-footer .social-media a:hover {
-    text-decoration: underline;
-}
-
 /* Styles pour les boutons */
 button[type="submit"] {
     display: inline-block;
@@ -159,7 +81,7 @@ button[type="submit"] {
     color: #fff;
     background-color: #28a745;
     border: none;
-    border-radius: 25px; /* Bordures arrondies */
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -169,35 +91,35 @@ button[type="submit"]:hover {
 }
 
 /* Styles pour les formulaires */
-form#contact-form {
+form#transaction-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff; /* Couleur de fond blanche pour mieux voir les champs */
+    background-color: #fff;
     padding: 2em;
-    border-radius: 15px; /* Bordures arrondies pour le formulaire */
+    border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 600px; /* Limiter la largeur maximale */
+    max-width: 600px;
     margin: 0 auto;
 }
 
-form#contact-form .form-group {
+form#transaction-form .form-group {
     width: 100%;
     margin-bottom: 15px;
 }
 
-form#contact-form .form-control {
+form#transaction-form .form-control {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border-radius: 25px; /* Bordures arrondies */
+    border-radius: 25px;
     border: 1px solid #ccc;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s;
 }
 
-form#contact-form .form-control:focus {
+form#transaction-form .form-control:focus {
     border-color: #28a745;
     outline: none;
 }
@@ -240,11 +162,5 @@ form#contact-form .form-control:focus {
     footer .social-media a {
         display: block;
         margin: 0.5em 0;
-    }
-
-    .styled-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
     }
 }
