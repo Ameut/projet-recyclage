@@ -46,6 +46,7 @@ def temoignages(request):
             form.save()  #    Sauvegarde du formulaire dans la base de données
     else:
         form = TemoinForm()  # Création d'une instance de formulaire vide
+    
     temoignages = Temoin.objects.all()  # Fetch all testimonials from the database
     return render(request, 'index.html', {'form': form, 'temoignages': temoignages})
 from django.shortcuts import render, redirect
@@ -53,7 +54,7 @@ from .forms import InventaireForm, BalleForm
 from .models import Inventaire, Balle
 from django.utils import formats
 
-def inventaires(request):
+def inventaires(request):# Vue pour afficher les inventaires et les balles associées
     form = InventaireForm()
     balle_form = BalleForm()
     error = None

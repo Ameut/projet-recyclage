@@ -116,7 +116,6 @@
 
       <!-- Section pour les témoignages avec un formulaire -->
       <section id="temoignages" class="content">
-        <h2>Donner nous votre avis</h2>
         <div class="text">
           <form method="post" action="{% url 'temoignages' %}">
             {% csrf_token %} {{ form.as_p }}

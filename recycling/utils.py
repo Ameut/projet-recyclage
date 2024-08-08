@@ -11,7 +11,7 @@ def save_transaction(material_name, quantity):
     
     # Si le matériau n'est pas trouvé, afficher un message d'erreur et retourner None
     if not material:
-        print(f"No material found with name: {material_name}")
+        print(f"Matiére non trouver: {material_name}")
         return None
     
     # Extraire le taux de réduction de CO2 du matériau
