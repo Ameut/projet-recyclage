@@ -7,7 +7,7 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('economie-circulaire/', views.economie_circulaire, name='economie_circulaire'),
-    path('temoignages/', views.temoignages, name='temoignages'),
+  
     path('inventaires/', views.inventaires, name='inventaires'),
     path('supprimer_inventaire/<int:id>/', views.supprimer_inventaire, name='supprimer_inventaire'),
     path('supprimer_balle/<int:id>/', views.supprimer_balle, name='supprimer_balle'),
@@ -19,5 +19,7 @@ urlpatterns = [
     path('demande-devis/', views.demande_devis, name='demande_devis'),
     path('information_agence/', information_agence, name='information_agence'),
     path('add_and_calculate/', views.add_and_calculate, name='add_and_calculate'),
+    path('login/', views.login_view, name='login'),
+
 
 ]

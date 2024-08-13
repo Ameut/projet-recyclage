@@ -79,17 +79,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/contact">Contact</a>
             </li>
-            <li class="nav-item">
-              <form method="post" action="{% url 'temoignages' %}">
-                {% csrf_token %}
-                <!-- Bouton de soumission pour les témoignages -->
-                <button type="submit" class="btn btn-primary">
-                  Témoignage
-                </button>
-              </form>
-            </li>
-          </ul>
-        </div>
+            
       </nav>
       <!-- Bannière avec boutons -->
       <div class="banner">
@@ -114,49 +104,7 @@
       </section>
       {% endfor %}
 
-      <!-- Section pour les témoignages avec un formulaire -->
-      <section id="temoignages" class="content">
-        <div class="text">
-          <form method="post" action="{% url 'temoignages' %}">
-            {% csrf_token %} {{ form.as_p }}
-            <button type="submit">Votre avis</button>
-          </form>
-        </div>
-        <!-- Carrousel Bootstrap pour afficher les témoignages -->
-        <div
-          id="carouselExampleControls"
-          class="carousel slide"
-          data-ride="carousel"
-        >
-          <div class="carousel-inner">
-            {% for temoin in temoignages %}
-            <div class="carousel-item {% if forloop.first %}active{% endif %}">
-              <p>{{ temoin.commentaire }}</p>
-              <p><strong>Note:</strong> {{ temoin.note }}/5</p>
-              <p><strong>Par:</strong> {{ temoin.nom }}</p>
-            </div>
-            {% endfor %}
-          </div>
-          <!-- Contrôles pour naviguer dans le carrousel -->
-          <a
-            class="carousel-control-prev"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a
-            class="carousel-control-next"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
+     
       </section>
     </main>
     <footer>

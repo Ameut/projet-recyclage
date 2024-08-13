@@ -9,6 +9,7 @@ from django.http import HttpResponse
 from django.utils import formats
 from django.utils import formats  # Import pour la gestion des formats de date
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 
 # Vue pour afficher la page d'accueil
@@ -36,23 +37,13 @@ def demande_devis(request):
         form = DemandeDevisForm()
     return render(request, 'demande-devis.html', {'form': form})
 
-from .models import Temoin
-from .forms import TemoinForm
-# Vue pour afficher les témoignages
-def temoignages(request):
-    if request.method == "POST":
-        form = TemoinForm(request.POST)
-        if form.is_valid():
-            form.save()  #    Sauvegarde du formulaire dans la base de données
-    else:
-        form = TemoinForm()  # Création d'une instance de formulaire vide
-    
-    temoignages = Temoin.objects.all()  # Fetch all testimonials from the database
-    return render(request, 'index.html', {'form': form, 'temoignages': temoignages})
+
+
 from django.shortcuts import render, redirect
 from .forms import InventaireForm, BalleForm
 from .models import Inventaire, Balle
 from django.utils import formats
+@login_required
 
 def inventaires(request):# Vue pour afficher les inventaires et les balles associées
     form = InventaireForm()
@@ -109,6 +100,13 @@ def supprimer_balle(request, id):
     balle = get_object_or_404(Balle, id=id)
     balle.delete()
     return redirect('inventaires')
+
+from django.contrib.auth import views as auth_views
+
+def login_view(request):
+    return auth_views.LoginView.as_view(template_name='login.html')(request)
+
+
 # Vue pour afficher les localisations
 def localisations(request):
     localisations = Localisation.objects.all()

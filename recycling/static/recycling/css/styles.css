@@ -200,3 +200,97 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #218838;
 }
+
+/* Styles spécifiques pour la page de connexion */
+.login-body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Conteneur central pour centrer le formulaire */
+.login-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Conteneur de formulaire */
+.login-form-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulaire de connexion */
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* Bouton de soumission */
+button[type="submit"] {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Responsivité pour petits écrans */
+@media (max-width: 480px) {
+    .login-form-container {
+        padding: 15px;
+    }
+
+    .form-group input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button[type="submit"] {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
