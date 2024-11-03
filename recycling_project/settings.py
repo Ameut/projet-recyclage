@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^c^$$ku8nf*@1^f9b@n(+&ir$&&wsmov+0x6+-0_!p=#f1wk9o'
+SECRET_KEY = 'django-insecure-^c^$$ku8nf*@1^f9b@n(+&ir$&&wsmov+0x6+-0_!p=#f1wk9o'#
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,10 +85,23 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.sqlite3',
+   #    'NAME': BASE_DIR / 'db.sqlite3',
+    #}
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sud_rec1',
+        'USER': 'ameur_rec',
+        'PASSWORD': 'ameur1',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'OPTIONS': {
+            'client_encoding': 'UTF8',
+        },
     }
 }
 
@@ -160,4 +173,40 @@ USE_TZ = True
 DATE_FORMAT = 'd/m/Y'
 DATETIME_FORMAT = 'd/m/Y H:i:s'
 TIME_FORMAT = 'H:i:s'
+
+
+
+
+#PASSWORD_HASHERS = [
+    #'django.contrib.auth.hashers.BCryptPasswordHasher',
+    #'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+#]
+
+# Configuration SSL pour sécuriser l'application en production
+
+# Forcer toutes les requêtes HTTP à être redirigées vers HTTPS
+# SECURE_SSL_REDIRECT = True
+
+# Utiliser le filtre XSS intégré des navigateurs pour empêcher certaines attaques
+# SECURE_BROWSER_XSS_FILTER = True
+
+# Empêcher le MIME-sniffing pour empêcher certains types d'attaques
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Forcer l'utilisation de cookies uniquement sur des connexions HTTPS
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+
+# Utiliser HSTS (Strict Transport Security) pour forcer les navigateurs à toujours utiliser HTTPS
+# SECURE_HSTS_SECONDS = 31536000  # 1 an
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Appliquer également aux sous-domaines
+# SECURE_HSTS_PRELOAD = True  # Autoriser le site à être préchargé dans les listes HSTS
+
+# Empêcher le chargement du site dans une iframe pour éviter les attaques de type Clickjacking
+# X_FRAME_OPTIONS = 'DENY'
+
+# Utiliser les cookies "SameSite" pour protéger contre les attaques CSRF
+# CSRF_COOKIE_SAMESITE = 'Lax'
+# SESSION_COOKIE_SAMESITE = 'Lax'
+
 

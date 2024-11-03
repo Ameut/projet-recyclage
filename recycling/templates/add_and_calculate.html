@@ -79,10 +79,14 @@
     </header>
     <main>
       <section class="content">
-        <p>Calculer le taux de co2 non émis rentrer votre matiére</p>
+        <p><strong>
+          Calculez le taux de CO₂ économisé. Entrez le poids de votre matière en
+          tonnes
+        </p> </strong>
         <form method="post" id="transaction-form">
           {% csrf_token %} {{ form.as_p }}
           <button type="submit" class="btn btn-success">Calcul</button>
+          <!-- <input type="submit" value="Calcul" class="btn btn-success" /> -->
         </form>
         <h3>Total CO2 sauver</h3>
         <p>{{ total_co2_saved }} kg</p>

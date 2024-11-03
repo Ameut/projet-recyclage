@@ -75,9 +75,13 @@ nav ul li a:hover {
 
 /* Contenu principal */
 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 2em;
+    max-width: 1000px; /* Limite la largeur sur les grands écrans */
+    margin: 0 auto; /* Centre le contenu horizontalement */
 }
-
 section {
     margin-bottom: 2em;
     background-color: white;
@@ -100,7 +104,7 @@ section {
 }
 
 .content img {
-    max-width: 40%;
+    max-width: 60%;
     height: auto;
     border-radius: 8px;
     object-fit: cover;
@@ -111,7 +115,8 @@ section {
 .content .text {
     flex: 1;
     padding-right: 20px; /* Espace entre le texte et l'image */
-    order: 1; /* Positionne le texte à gauche */
+    order: 1;
+     /* Positionne le texte à gauche */
 }
 
 /* Media queries pour rendre le design responsive */
@@ -279,7 +284,7 @@ button[type="submit"]:hover {
 }
 
 /* Responsivité pour petits écrans */
-@media (max-width: 480px) {
+@media (max-width: 480px) { /* Pour les petits écrans */
     .login-form-container {
         padding: 15px;
     }
@@ -294,3 +299,4 @@ button[type="submit"]:hover {
         font-size: 14px;
     }
 }
+

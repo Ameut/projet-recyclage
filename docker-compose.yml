@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
   web:
@@ -10,15 +10,22 @@ services:
       - "8000:8000"
     environment:
       - DEBUG=True
+      - POSTGRES_DB=recycling_projet
+      - POSTGRES_USER=user_recycling
+      - POSTGRES_PASSWORD=24recy00/25
     depends_on:
-      - mongo
+      - db  # Attendre que PostgreSQL soit prêt avant de démarrer Django
 
-  mongo:
-    image: mongo:4.4
-    volumes:
-      - mongo_data:/data/db
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: recycling_projet
+      POSTGRES_USER: user_recycling
+      POSTGRES_PASSWORD: 24recy00/25
     ports:
-      - "27017:27017"
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  mongo_data:
+  postgres_data:

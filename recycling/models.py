@@ -62,17 +62,9 @@ class DemandeDevis(models.Model):
     localisation = models.ForeignKey(Localisation, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Devis de {self.nom} ({self.date_demande})"
+        return f"Devis de {self.nom} ({self.date_demande}) "
 
-# Modèle pour les témoignages
-class Temoin(models.Model):
-    nom = models.CharField(max_length=100)
-    note = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
-    commentaire = models.TextField()
-    date_soumission = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return f"Témoignage de {self.nom} ({self.note} étoiles)"
 
 # Modèle pour les images
 class Image(models.Model):
@@ -102,3 +94,18 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.nom
+    
+    
+    
+    
+    
+# Modèle pour les témoignages
+
+class Temoin(models.Model):
+    nom = models.CharField(max_length=100)
+    note = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
+    commentaire = models.TextField()
+    date_soumission = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Témoignage de {self.nom} ({self.note} étoiles)"

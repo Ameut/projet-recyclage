@@ -58,7 +58,7 @@ from django.test import TestCase
 from .models import DemandeDevis, Localisation
 
 class DevisTestCase(TestCase):
-    def setUp(self):
+    def setUp(self):# Créez un objet Localisation pour le test
         localisation = Localisation.objects.create(ville="Paris", adresse="123 Rue de Paris")
         DemandeDevis.objects.create(nom="Jean Dupont", email="jean@example.com", telephone="0123456789", message="Je voudrais un devis", localisation=localisation)
 
@@ -69,10 +69,10 @@ from django.test import TestCase
 from .models import Contact, Localisation
 
 class ContactTestCase(TestCase):
-    def setUp(self):
+    def setUp(self):# Créez un objet Localisation pour le test
         localisation = Localisation.objects.create(ville="Lyon", adresse="456 Rue de Lyon")
         Contact.objects.create(nom="Marie Dubois", email="marie@example.com", commentaires="Ceci est un commentaire", localisation=localisation)
 
-    def test_contact_creation(self):
+    def test_contact_creation(self):# Teste si l'objet Contact a été créé correctement
         contact = Contact.objects.get(nom="Marie Dubois")
         self.assertEqual(contact.commentaires, "Ceci est un commentaire")

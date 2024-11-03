@@ -174,11 +174,15 @@
 
       <section class="content">
         <div class="text">
-          <form method="get" action="{% url 'telecharger_inventaires_pdf' %}">
+          <form
+            method="get"
+            action="{% url 'telecharger_inventaires_pdf' %}"
+            style="margin-bottom: 10px"
+          >
             <button type="submit">Télécharger l'inventaire en PDF</button>
           </form>
           <form method="get" action="{% url 'telecharger_inventaires' %}">
-            <button type="submit">Télécharger les inventaires excel</button>
+            <button type="submit">Télécharger les inventaires Excel</button>
           </form>
         </div>
       </section>
