@@ -42,7 +42,7 @@ def get_total_co2_saved():
     transactions = db.transactions.find()
     
     # Calculer le total de CO2 économisé en additionnant le 'co2_saved' de chaque transaction
-    total_co2_saved = sum(t['co2_saved'] for t in transactions)
+    total_co2_saved = sum(t['co2_saved'] for t in transactions)# total de CO2 économisé en addition de toutes les transactions
     return total_co2_saved  # Retourner le total de CO2 économisé
 
 # Fonction pour réinitialiser (supprimer) toutes les transactions

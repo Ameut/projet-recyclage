@@ -81,10 +81,13 @@ main {
     padding: 2em;
     max-width: 1000px; /* Limite la largeur sur les grands écrans */
     margin: 0 auto; /* Centre le contenu horizontalement */
+    background-color: white; /* Ajoute un fond pour que l'ombre soit visible */
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1); /* Ombre autour du main */
+    border-radius: 10px; /* Optionnel : pour des bords arrondis */
 }
 section {
     margin-bottom: 2em;
-    background-color: white;
+    background-color: rgb(233, 229, 229);
     padding: 2em;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

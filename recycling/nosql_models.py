@@ -1,9 +1,8 @@
 from djongo import models
 
 class Material(models.Model):
-    name = models.CharField(max_length=100)
-    co2_reduction_rate = models.FloatField()  # kg de CO2 réduit par unité
-
+    name = models.CharField(max_length=100)# Nom du matériau
+    co2_reduction_rate = models.FloatField()  # kg de CO2 réduit par unité de matériau recyclé
     def __str__(self):
         return self.name
 

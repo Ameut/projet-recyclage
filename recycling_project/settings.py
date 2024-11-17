@@ -94,16 +94,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sud_rec1',
-        'USER': 'ameur_rec',
-        'PASSWORD': 'ameur1',
+        'NAME': 'recyclage_app',
+        'USER': 'ameur81',
+        'PASSWORD': '2425rec++',
         'HOST': 'localhost',
         'PORT': '5432',
         'OPTIONS': {
-            'client_encoding': 'UTF8',
-        },
+            'client_encoding': 'UTF8'  # Utilisez seulement ce paramètre pour forcer UTF-8
+        }
     }
 }
+
+
+
 
 from pymongo import MongoClient
 

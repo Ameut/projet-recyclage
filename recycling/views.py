@@ -49,59 +49,68 @@ def demande_devis(request):
     # Affiche le formulaire de demande de devis
     return render(request, 'demande-devis.html', {'form': form})
 
+# ===================== Authentification utilisateur =====================
+
+def login_view(request):
+    # Utilise la vue intégrée de connexion avec un template personnalisé
+    return auth_views.LoginView.as_view(template_name='login.html')(request)
+
+
 # ===================== Vues d'inventaire et de gestion des balles =====================
 
-@login_required
+# Décorateur pour exiger que l'utilisateur soit authentifié pour accéder à cette vue
+@login_required  
 def inventaires(request):
-    # Instancie les formulaires d'inventaire et de balle
-    form = InventaireForm()# Formulaire vide pour les requêtes GET
-    balle_form = BalleForm()#
-    error = None  # Variable pour les erreurs
+    # Instancie les formulaires d'inventaire et de balle pour les requêtes GET (initialement vides)
+    form = InventaireForm()  # Formulaire pour ajouter un nouvel inventaire
+    balle_form = BalleForm()  # Formulaire pour ajouter une balle liée à un inventaire
+    error = None  # Variable pour stocker les messages d'erreur (utilisée si une sélection d'inventaire est manquante)
 
-    # Vérifie si la requête est de type POST pour traiter les formulaires
-    if request.method == 'POST':# Si la requête est de type POST
-        # Soumission du formulaire d'inventaire
-        if 'volume_submit' in request.POST:# Si le formulaire est soumis
-            form = InventaireForm(request.POST)
-            if form.is_valid():
-                form.save()  # Sauvegarde de l'inventaire
-                return redirect('inventaires')
-        # Soumission du formulaire de balle
-        elif 'balle_submit' in request.POST:# Si le formulaire est soumis sur le formulaire de balle de l'inventaire sélectionné
-            balle_form = BalleForm(request.POST)
-            if balle_form.is_valid():
-                balle = balle_form.save(commit=False)  # Sauvegarde de la balle sans la valider pour ajouter un inventaire
-                inventaire_id = request.POST.get('inventaire')
-                if inventaire_id:
-                    balle.inventaire_id = inventaire_id  # Associe la balle à un inventaire
-                    balle.save()  # Sauvegarde de la balle
+    # Vérifie si la requête est de type POST, ce qui signifie qu'un formulaire a été soumis
+    if request.method == 'POST':  
+        # Si le formulaire soumis est celui d'inventaire (repéré par 'volume_submit' dans les données de requête)
+        if 'volume_submit' in request.POST:  # Si le formulaire soumis est celui d'inventaire (repéré par 'volume_submit' dans les données de requête)
+            form = InventaireForm(request.POST)  # Remplit le formulaire d'inventaire avec les données POST
+            if form.is_valid():  # Si le formulaire est valide (les champs requis sont remplis correctement)
+                form.save()  # Sauvegarde l'inventaire dans la base de données
+                return redirect('inventaires')  # Redirige vers la page des inventaires pour afficher les mises à jour
+
+        # Si le formulaire soumis est celui de balle (repéré par 'balle_submit' dans les données de requête)
+        elif 'balle_submit' in request.POST:  
+            balle_form = BalleForm(request.POST)  # Remplit le formulaire de balle avec les données POST
+            if balle_form.is_valid():  # Si le formulaire de balle est valide
+                balle = balle_form.save(commit=False)  # Crée une instance de balle sans la sauvegarder tout de suite
+                inventaire_id = request.POST.get('inventaire')  # Récupère l'ID de l'inventaire sélectionné
+                if inventaire_id:  # Vérifie si un inventaire est sélectionné
+                    balle.inventaire_id = inventaire_id  # Associe la balle à l'inventaire sélectionné
+                    balle.save()  # Sauvegarde la balle dans la base de données
                 else:
-                    error = 'Please select a valid Inventaire'  # Erreur si aucun inventaire n'est sélectionné
-                return redirect('inventaires')
+                    error = 'Please select a valid Inventaire'  # Message d'erreur si aucun inventaire n'est sélectionné
+                return redirect('inventaires')  # Redirige vers la page des inventaires
 
-    # Récupère tous les inventaires et balles pour affichage
+    # Récupère tous les inventaires et toutes les balles dans la base de données pour les afficher sur la page
     inventaires = Inventaire.objects.all()
     balles = Balle.objects.all()
-    # Prépare une liste de résultats pour chaque inventaire (calcul du volume * coefficient)
-    resultats = [ # Liste de résultats pour chaque inventaire
+
+    # Crée une liste de résultats pour chaque inventaire, avec des calculs pour afficher les informations clés
+    resultats = [
         {
             'id': inventaire.id,
-            'matiere': inventaire.matiere.nom,
-            'volume': inventaire.volume_m3,
-            'coef': inventaire.matiere.coefficient,
-            'resultat': inventaire.volume_m3 * inventaire.matiere.coefficient,
-            'date': formats.date_format(inventaire.date_enregistrement, 'DATE_FORMAT')
-        } for inventaire in inventaires # Pour chaque inventaire boucle sur les résultats de calcul de volume * coefficient et ajoute les résultats à la liste
-        # Ajoute les résultats à la liste
+            'matiere': inventaire.matiere.nom,  # Nom de la matière de l'inventaire
+            'volume': inventaire.volume_m3,  # Volume en m³ de l'inventaire
+            'coef': inventaire.matiere.coefficient,  # Coefficient de la matière
+            'resultat': inventaire.volume_m3 * inventaire.matiere.coefficient,  # Calcul du volume * coefficient
+            'date': formats.date_format(inventaire.date_enregistrement, 'DATE_FORMAT')  # Date d'enregistrement formatée
+        } for inventaire in inventaires  # Boucle sur chaque inventaire pour créer un dictionnaire de résultats
     ]
 
-    # Rend la page d'inventaires avec les formulaires, les inventaires et les erreurs
+    # Rend la page 'inventaires.html' en y passant les formulaires, les inventaires, les balles, et les messages d'erreur
     return render(request, 'inventaires.html', {
-        'form': form,
-        'balle_form': balle_form,
-        'resultats': resultats,
-        'balles': balles,
-        'error': error
+        'form': form,  # Formulaire pour ajouter un inventaire
+        'balle_form': balle_form,  # Formulaire pour ajouter une balle
+        'resultats': resultats,  # Liste des résultats pour chaque inventaire
+        'balles': balles,  # Liste de toutes les balles
+        'error': error  # Message d'erreur éventuel
     })
 
 # Vue pour supprimer un inventaire
@@ -116,12 +125,6 @@ def supprimer_balle(request, id):
     balle = get_object_or_404(Balle, id=id)# Récupère la balle ou renvoie une erreur 404 s'il n'existe pas
     balle.delete()# Supprime la balle
     return redirect('inventaires')
-
-# ===================== Authentification utilisateur =====================
-
-def login_view(request):
-    # Utilise la vue intégrée de connexion avec un template personnalisé
-    return auth_views.LoginView.as_view(template_name='login.html')(request)
 
 
 
@@ -205,9 +208,9 @@ def telecharger_inventaires_pdf(request):
 
 # ===================== Vue de calcul des transactions CO2 =====================
 
-def add_and_calculate(request):
-    if request.method == 'POST':
-        form = TransactionForm(request.POST)
+def add_and_calculate(request):# Ajoute une transaction et calcule le CO2
+    if request.method == 'POST':# Si la méthode est POST
+        form = TransactionForm(request.POST)# Crée un formulaire de transaction avec les données de la requête POST
         if form.is_valid():
             # Réinitialise les transactions, enregistre la nouvelle transaction
             reset_transactions()
