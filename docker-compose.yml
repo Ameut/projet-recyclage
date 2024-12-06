@@ -9,19 +9,21 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DEBUG=True
-      - POSTGRES_DB=recycling_projet
-      - POSTGRES_USER=user_recycling
-      - POSTGRES_PASSWORD=24recy00/25
+      DEBUG: 'True'
+      POSTGRES_DB: recyclage
+      POSTGRES_USER: ameur11
+      POSTGRES_PASSWORD: loulou
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
     depends_on:
-      - db  # Attendre que PostgreSQL soit prêt avant de démarrer Django
+      - db
 
   db:
     image: postgres:13
     environment:
-      POSTGRES_DB: recycling_projet
-      POSTGRES_USER: user_recycling
-      POSTGRES_PASSWORD: 24recy00/25
+      POSTGRES_DB: recyclage
+      POSTGRES_USER: ameur11
+      POSTGRES_PASSWORD: loulou
     ports:
       - "5432:5432"
     volumes:

@@ -62,7 +62,7 @@ def login_view(request):
 @login_required  
 def inventaires(request):
     # Instancie les formulaires d'inventaire et de balle pour les requêtes GET (initialement vides)
-    form = InventaireForm()  # Formulaire pour ajouter un nouvel inventaire
+    form = InventaireForm()  # Formulaire pour ajouter un nouvel inventaire en vrac
     balle_form = BalleForm()  # Formulaire pour ajouter une balle liée à un inventaire
     error = None  # Variable pour stocker les messages d'erreur (utilisée si une sélection d'inventaire est manquante)
 
@@ -85,7 +85,7 @@ def inventaires(request):
                     balle.inventaire_id = inventaire_id  # Associe la balle à l'inventaire sélectionné
                     balle.save()  # Sauvegarde la balle dans la base de données
                 else:
-                    error = 'Please select a valid Inventaire'  # Message d'erreur si aucun inventaire n'est sélectionné
+                    error = 'merci de selection une inventaire valide'  # Message d'erreur si aucun inventaire n'est sélectionné
                 return redirect('inventaires')  # Redirige vers la page des inventaires
 
     # Récupère tous les inventaires et toutes les balles dans la base de données pour les afficher sur la page
@@ -221,7 +221,7 @@ def add_and_calculate(request):# Ajoute une transaction et calcule le CO2
             return redirect('add_and_calculate')
     else:
         form = TransactionForm()  # Formulaire vide pour GET
-    total_co2_saved = get_total_co2_saved()
+    total_co2_saved = get_total_co2_saved() # Récupère le total de CO2 économisé
     # Rend la page avec le total de CO2 économisé
     return render(request, 'add_and_calculate.html', {'form': form, 'total_co2_saved': total_co2_saved})
 

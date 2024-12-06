@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'recycling_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-import os
+
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -91,17 +91,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
    #    'NAME': BASE_DIR / 'db.sqlite3',
     #}
 #}
+LANGUAGE_CODE = 'fr'
+TIME_ZONE = 'Europe/Paris'
+
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
+
+# settings.py (Django configuration)
+import os
+from decouple import config
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'recyclage_app',
-        'USER': 'ameur81',
-        'PASSWORD': '2425rec++',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'OPTIONS': {
-            'client_encoding': 'UTF8'  # Utilisez seulement ce paramètre pour forcer UTF-8
-        }
+        'NAME': os.getenv('POSTGRES_DB', 'recyclage'),
+        'USER': os.getenv('POSTGRES_USER', 'ameur11'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'loulou'),
+        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),  # Par défaut localhost
+        'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }
 }
 
