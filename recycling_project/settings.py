@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'recycling_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-from pathlib import Path
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -91,24 +91,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
    #    'NAME': BASE_DIR / 'db.sqlite3',
     #}
 #}
-LANGUAGE_CODE = 'fr'
-TIME_ZONE = 'Europe/Paris'
 
-USE_I18N = True
-USE_L10N = True
-USE_TZ = True
 
 # settings.py (Django configuration)
+
 import os
 from decouple import config
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'recyclage'),
-        'USER': os.getenv('POSTGRES_USER', 'ameur11'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'loulou'),
-        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),  # Par défaut localhost
-        'PORT': os.getenv('POSTGRES_PORT', '5432'),
+        'NAME': config('POSTGRES_DB', default='recyclage1'),
+        'USER': config('POSTGRES_USER', default='ameur111'),
+        'PASSWORD': config('POSTGRES_PASSWORD', default='loulou1'),
+        'HOST': config('POSTGRES_HOST', default='localhost'),
+        'PORT': config('POSTGRES_PORT', default='5432'),
     }
 }
 
@@ -144,13 +141,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr'  # Définit la langue en français
+TIME_ZONE = 'Europe/Paris'  # Définit le fuseau horaire pour la France
+USE_I18N = True  # Active la traduction internationale
+USE_TZ = True  # Active la gestion des fuseaux horaires
 
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_TZ = True
+# Formats adaptés pour le français
+DATE_FORMAT = 'd/m/Y'  # Format : jour/mois/année
+DATETIME_FORMAT = 'd/m/Y H:i:s'  # Format : jour/mois/année heure:minute:seconde
+TIME_FORMAT = 'H:i:s'  # Heure au format 24h
 
 
 # Static files (CSS, JavaScript, Images)
@@ -174,15 +173,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
-LANGUAGE_CODE = 'fr'
-USE_I18N = True
-USE_L10N = True
-USE_TZ = True
 
-# Formats de date et d'heure personnalisés
-DATE_FORMAT = 'd/m/Y'
-DATETIME_FORMAT = 'd/m/Y H:i:s'
-TIME_FORMAT = 'H:i:s'
+
 
 
 

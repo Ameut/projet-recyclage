@@ -4,6 +4,7 @@ from .views import inventaires, supprimer_inventaire, telecharger_inventaires, i
 from django.urls import path
 from . import views
 
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('economie-circulaire/', views.economie_circulaire, name='economie_circulaire'),
@@ -20,6 +21,7 @@ urlpatterns = [
     path('information_agence/', information_agence, name='information_agence'),
     path('add_and_calculate/', views.add_and_calculate, name='add_and_calculate'),
     path('login/', views.login_view, name='login'),
+   
 
 
 ]

@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.9"
 
 services:
   web:
@@ -9,10 +9,10 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DEBUG: 'True'
-      POSTGRES_DB: recyclage
-      POSTGRES_USER: ameur11
-      POSTGRES_PASSWORD: loulou
+      DEBUG: "True"
+      POSTGRES_DB: recyclage1
+      POSTGRES_USER: ameur111
+      POSTGRES_PASSWORD: loulou1
       POSTGRES_HOST: db
       POSTGRES_PORT: 5432
     depends_on:
