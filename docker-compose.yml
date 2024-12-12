@@ -6,6 +6,8 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
+      - ./staticfiles:/app/staticfiles
+      - ./media:/app/media
     ports:
       - "8000:8000"
     environment:
@@ -17,17 +19,25 @@ services:
       POSTGRES_PORT: 5432
     depends_on:
       - db
+      - mongo
 
   db:
     image: postgres:13
     environment:
-      POSTGRES_DB: recyclage
-      POSTGRES_USER: ameur11
-      POSTGRES_PASSWORD: loulou
+      POSTGRES_DB: recyclage1
+      POSTGRES_USER: ameur111
+      POSTGRES_PASSWORD: loulou1
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: co2calculator
 
 volumes:
   postgres_data:

@@ -101,13 +101,14 @@ from decouple import config
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('POSTGRES_DB', default='recyclage1'),
-        'USER': config('POSTGRES_USER', default='ameur111'),
-        'PASSWORD': config('POSTGRES_PASSWORD', default='loulou1'),
-        'HOST': config('POSTGRES_HOST', default='localhost'),
-        'PORT': config('POSTGRES_PORT', default='5432'),
+        'NAME': os.getenv('POSTGRES_DB', 'recyclage11'),
+        'USER': os.getenv('POSTGRES_USER', 'ameur1111'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'loulou11'),
+        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
+        'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }
 }
+
 
 
 
