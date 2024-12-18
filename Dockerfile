@@ -1,8 +1,8 @@
 # Utiliser une image Python de base
-FROM python:3.9
+FROM python:3.9-slim
 
 # Installer les dépendances système nécessaires
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libpq-dev \
     gcc \
@@ -13,11 +13,11 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copier le fichier requirements.txt et installer les dépendances Python
-COPY requirements.txt /app/requirements.txt
+COPY requirements.txt ./
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 # Copier tout le contenu du projet dans le conteneur
-COPY . /app
+COPY . .
 
 # Exposer le port 8000
 EXPOSE 8000

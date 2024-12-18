@@ -11,6 +11,6 @@ class Transaction(models.Model):
     quantity = models.FloatField()  # Quantité de matériau recyclé
     date = models.DateTimeField(auto_now_add=True)
 
-    @property
+    @property # Le décorateur @property transforme cette méthode en une propriété accessible comme un attribut
     def co2_saved(self):
         return self.material.co2_reduction_rate * self.quantity
