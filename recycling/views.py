@@ -39,7 +39,7 @@ def economie_circulaire(request):
 def demande_devis(request):
     # Vérifie si la requête est de type POST (soumission de formulaire)
     if request.method == 'POST':
-        form = DemandeDevisForm(request.POST)
+        form = DemandeDevisForm(request.POST)# Si c'est un POST, on récupère les données du formulaire
         if form.is_valid():  # Vérifie si le formulaire est valide
             form.save()  # Sauvegarde les données du formulaire
             return JsonResponse({'success': True})  # Réponse JSON en cas de succès
@@ -116,7 +116,7 @@ def inventaires(request):
 # Vue pour supprimer un inventaire
 def supprimer_inventaire(request, id):
     # Récupère l'inventaire ou renvoie une erreur 404 s'il n'existe pas
-    inventaire = get_object_or_404(Inventaire, id=id)
+    inventaire = get_object_or_404(Inventaire, id=id)# Récupère l'inventaire ou renvoie une erreur 404 s'il n'existe pas
     inventaire.delete()  # Supprime l'inventaire
     return redirect('inventaires')
 
@@ -215,7 +215,7 @@ def add_and_calculate(request):# Ajoute une transaction et calcule le CO2
             # Réinitialise les transactions, enregistre la nouvelle transaction
             reset_transactions()
             save_transaction(
-                form.cleaned_data['material'],# Enregistre la transaction
+                form.cleaned_data['material'], # récupere le choix de utilisateur Nom de la matière (ex. "Papier", "Plastique")
                 form.cleaned_data['quantity']
             )
             return redirect('add_and_calculate')
@@ -254,3 +254,46 @@ def information_agence(request, localisation_id):
     infos = InformationAgence.objects.filter(localisation=localisation)
     # Rend la page d'informations d'agence avec les détails
     return render(request, 'information_agence.html', {'infos': infos, 'localisation': localisation})
+
+# logger de sécurité
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+import logging
+import os 
+
+# Instanciation du logger
+logger = logging.getLogger('security')
+
+@login_required
+def secure_view(request):
+    # Log l'accès à la page sécurisée
+    logger.info(f"Utilisateur connecté : {request.user.username}")
+
+    # Chemin vers le fichier de logs
+    log_file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'security.log')
+    logs = []
+
+    # Lecture des logs si le fichier existe
+    if os.path.exists(log_file_path):
+        with open(log_file_path, 'r') as log_file:
+            logs = log_file.readlines()
+
+    return render(request, 'secure_page.html', {'logs': logs})
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)  # Authentification Django
+
+        if user is not None:
+            login(request, user)  # Connexion de l'utilisateur
+            logger.info(f"Connexion réussie pour : {username}")
+            return redirect('secure_view')  # Redirige vers la page sécurisée
+        else:
+            logger.warning(f"Tentative de connexion échouée pour : {username}")
+            return render(request, 'login.html', {'error': 'Nom d’utilisateur ou mot de passe incorrect.'})
+    
+    return render(request, 'login.html')  # Affiche la page de connexion

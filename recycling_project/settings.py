@@ -213,3 +213,41 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # SESSION_COOKIE_SAMESITE = 'Lax'
 
 
+# Configuration des logs
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'security.log'),
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'security': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+LOGIN_URL = '/login1/'  # URL pour la redirection si l'utilisateur n'est pas connecté
+LOGIN_REDIRECT_URL = '/secure/'  # URL après connexion réussie

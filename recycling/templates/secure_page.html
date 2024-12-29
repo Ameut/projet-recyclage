@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page sécurisée</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        padding: 20px;
+      }
+      .logs-container {
+        margin-top: 20px;
+        background: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .log {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 3px;
+        font-size: 14px;
+        line-height: 1.4;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bienvenue dans la zone sécurisée</h1>
+    <p>Bonjour, {{ user.username }}. Vous êtes connecté.</p>
+
+    <div class="logs-container">
+      <h2>Logs de sécurité</h2>
+      {% if logs %} {% for log in logs %}
+      <div class="log">{{ log }}</div>
+      {% endfor %} {% else %}
+      <p>Aucun log de sécurité disponible.</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

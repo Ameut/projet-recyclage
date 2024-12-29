@@ -1,0 +1,195 @@
+INFO 2024-12-29 14:43:34,801 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 14:43:38,580 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2024-12-29 14:43:39,794 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2024-12-29 14:43:41,734 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2024-12-29 14:43:43,049 basehttp "GET / HTTP/1.1" 200 5913
+WARNING 2024-12-29 14:43:46,671 log Not Found: /favicon.ico
+WARNING 2024-12-29 14:43:46,672 basehttp "GET /favicon.ico HTTP/1.1" 404 6258
+INFO 2024-12-29 14:43:54,053 basehttp "GET /economie-circulaire/ HTTP/1.1" 200 4517
+INFO 2024-12-29 14:43:54,109 basehttp "GET /media/images_economie_circulaire/Visu-dintro-1.jpg HTTP/1.1" 304 0
+INFO 2024-12-29 14:48:34,066 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 14:48:36,738 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2024-12-29 14:48:45,985 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-12-29 14:48:46,052 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4235
+INFO 2024-12-29 14:48:46,151 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2024-12-29 14:48:46,156 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2024-12-29 14:48:46,159 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:48:46,162 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2024-12-29 14:48:46,163 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2024-12-29 14:48:46,164 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2024-12-29 14:48:46,175 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:48:50,551 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2024-12-29 14:48:50,679 basehttp "GET /admin/ HTTP/1.1" 200 18549
+INFO 2024-12-29 14:48:50,768 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2024-12-29 14:48:51,285 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2024-12-29 14:48:51,285 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:00,086 basehttp "GET /admin/auth/ HTTP/1.1" 200 5981
+INFO 2024-12-29 14:49:03,090 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 17581
+INFO 2024-12-29 14:49:03,118 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,124 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,125 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,125 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,126 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,129 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,129 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,130 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,130 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,135 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,136 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,203 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 8985
+INFO 2024-12-29 14:49:03,447 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,511 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,512 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:03,675 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2024-12-29 14:49:13,667 basehttp "GET /admin/auth/user/add/ HTTP/1.1" 200 18468
+INFO 2024-12-29 14:49:13,696 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:13,697 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:13,697 basehttp "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2024-12-29 14:49:13,707 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:13,779 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 8985
+INFO 2024-12-29 14:49:14,066 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2024-12-29 14:49:14,068 basehttp "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+INFO 2024-12-29 14:50:28,432 basehttp "POST /admin/auth/user/add/ HTTP/1.1" 200 18797
+INFO 2024-12-29 14:50:28,579 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 8985
+INFO 2024-12-29 14:52:33,649 basehttp "POST /admin/auth/user/add/ HTTP/1.1" 200 18663
+INFO 2024-12-29 14:52:33,919 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 8985
+INFO 2024-12-29 14:53:09,663 basehttp "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+INFO 2024-12-29 14:53:09,840 basehttp "GET /admin/auth/user/34/change/ HTTP/1.1" 200 32341
+INFO 2024-12-29 14:53:09,943 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2024-12-29 14:53:09,944 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:53:09,945 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2024-12-29 14:53:09,949 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2024-12-29 14:53:10,098 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 8985
+INFO 2024-12-29 14:53:12,510 basehttp "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 304 0
+INFO 2024-12-29 14:53:12,517 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2024-12-29 14:53:12,518 basehttp "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 304 0
+INFO 2024-12-29 14:53:12,520 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2024-12-29 14:53:12,520 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2024-12-29 14:55:45,408 basehttp "POST /admin/auth/user/34/change/ HTTP/1.1" 200 32482
+INFO 2024-12-29 14:55:45,704 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 8985
+INFO 2024-12-29 14:56:02,869 basehttp "POST /admin/auth/user/34/change/ HTTP/1.1" 200 32475
+INFO 2024-12-29 14:56:03,033 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 8985
+INFO 2024-12-29 14:56:15,864 basehttp "POST /admin/auth/user/34/change/ HTTP/1.1" 302 0
+INFO 2024-12-29 14:56:16,008 basehttp "GET /admin/auth/user/ HTTP/1.1" 200 18255
+INFO 2024-12-29 14:56:16,052 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2024-12-29 14:56:16,270 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 8985
+INFO 2024-12-29 14:59:28,955 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 14:59:47,977 autoreload C:\Users\ameur\recycling_project\recycling\urls.py changed, reloading.
+INFO 2024-12-29 14:59:49,519 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:00:05,961 autoreload C:\Users\ameur\recycling_project\recycling\urls.py changed, reloading.
+INFO 2024-12-29 15:00:07,707 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:03:20,806 autoreload C:\Users\ameur\recycling_project\recycling\urls.py changed, reloading.
+INFO 2024-12-29 15:03:22,033 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:04:16,297 autoreload C:\Users\ameur\recycling_project\recycling\views.py changed, reloading.
+INFO 2024-12-29 15:04:17,724 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:07:08,154 autoreload C:\Users\ameur\recycling_project\recycling\views.py changed, reloading.
+INFO 2024-12-29 15:07:10,402 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:07:18,132 autoreload C:\Users\ameur\recycling_project\recycling\urls.py changed, reloading.
+INFO 2024-12-29 15:07:19,702 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:09:37,210 basehttp "GET /login/ HTTP/1.1" 200 650
+INFO 2024-12-29 15:09:39,526 views Tentative de connexion utilisateur : ameur
+INFO 2024-12-29 15:09:39,528 basehttp "POST /login/ HTTP/1.1" 200 650
+INFO 2024-12-29 15:09:44,115 views Tentative de connexion utilisateur : ameur
+INFO 2024-12-29 15:09:44,115 basehttp "POST /login/ HTTP/1.1" 200 650
+INFO 2024-12-29 15:09:47,229 views Tentative de connexion utilisateur : ameur
+INFO 2024-12-29 15:09:47,231 basehttp "POST /login/ HTTP/1.1" 200 650
+WARNING 2024-12-29 15:10:30,747 log Not Found: /login1/
+WARNING 2024-12-29 15:10:30,748 basehttp "GET /login1/ HTTP/1.1" 404 6765
+INFO 2024-12-29 15:10:37,256 views Utilisateur connecté : ameur
+INFO 2024-12-29 15:10:37,257 basehttp "GET /secure/ HTTP/1.1" 200 265
+INFO 2024-12-29 15:11:31,808 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2024-12-29 15:11:35,984 basehttp "GET /inventaires/ HTTP/1.1" 200 9018
+INFO 2024-12-29 15:12:23,089 autoreload C:\Users\ameur\recycling_project\recycling\urls.py changed, reloading.
+INFO 2024-12-29 15:12:24,295 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:12:38,215 basehttp "GET /login HTTP/1.1" 301 0
+INFO 2024-12-29 15:12:38,222 basehttp "GET /login/ HTTP/1.1" 200 650
+INFO 2024-12-29 15:12:40,456 views Tentative de connexion utilisateur : ameur
+INFO 2024-12-29 15:12:40,457 basehttp "POST /login/ HTTP/1.1" 200 650
+INFO 2024-12-29 15:12:42,733 views Tentative de connexion utilisateur : ameur
+INFO 2024-12-29 15:12:42,734 basehttp "POST /login/ HTTP/1.1" 200 650
+INFO 2024-12-29 15:13:21,185 autoreload C:\Users\ameur\recycling_project\recycling\views.py changed, reloading.
+INFO 2024-12-29 15:13:22,361 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:13:29,533 views Tentative de connexion utilisateur : ameur
+INFO 2024-12-29 15:13:29,540 basehttp "POST /login/ HTTP/1.1" 200 1141
+INFO 2024-12-29 15:13:31,648 views Tentative de connexion utilisateur : ameur
+INFO 2024-12-29 15:13:31,650 basehttp "POST /login/ HTTP/1.1" 200 1141
+INFO 2024-12-29 15:13:33,746 views Tentative de connexion utilisateur : ameur
+INFO 2024-12-29 15:13:33,746 basehttp "POST /login/ HTTP/1.1" 200 1141
+INFO 2024-12-29 15:13:42,332 autoreload C:\Users\ameur\recycling_project\recycling\views.py changed, reloading.
+INFO 2024-12-29 15:13:43,313 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:13:52,519 autoreload C:\Users\ameur\recycling_project\recycling\urls.py changed, reloading.
+INFO 2024-12-29 15:13:53,370 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:14:13,004 autoreload C:\Users\ameur\recycling_project\recycling\urls.py changed, reloading.
+INFO 2024-12-29 15:14:13,811 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:14:25,052 autoreload C:\Users\ameur\recycling_project\recycling\urls.py changed, reloading.
+INFO 2024-12-29 15:14:26,268 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:16:12,423 autoreload C:\Users\ameur\recycling_project\recycling\urls.py changed, reloading.
+INFO 2024-12-29 15:16:13,916 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:16:22,638 autoreload C:\Users\ameur\recycling_project\recycling\views.py changed, reloading.
+INFO 2024-12-29 15:16:24,225 autoreload Watching for file changes with StatReloader
+WARNING 2024-12-29 15:16:37,945 log Not Found: /login_vew
+WARNING 2024-12-29 15:16:37,946 basehttp "GET /login_vew HTTP/1.1" 404 6770
+INFO 2024-12-29 15:17:42,352 autoreload C:\Users\ameur\recycling_project\recycling\urls.py changed, reloading.
+INFO 2024-12-29 15:17:43,844 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:19:08,446 basehttp "GET /login1/ HTTP/1.1" 200 1141
+INFO 2024-12-29 15:19:11,672 views Tentative de connexion utilisateur : ameur
+INFO 2024-12-29 15:19:11,674 basehttp "POST /login1/ HTTP/1.1" 200 1141
+INFO 2024-12-29 15:19:15,201 views Tentative de connexion utilisateur : ameur
+INFO 2024-12-29 15:19:15,202 basehttp "POST /login1/ HTTP/1.1" 200 1141
+INFO 2024-12-29 15:21:57,036 autoreload C:\Users\ameur\recycling_project\recycling\urls.py changed, reloading.
+INFO 2024-12-29 15:21:58,863 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:22:43,421 autoreload C:\Users\ameur\recycling_project\recycling\views.py changed, reloading.
+INFO 2024-12-29 15:22:45,115 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:23:58,437 autoreload C:\Users\ameur\recycling_project\recycling_project\settings.py changed, reloading.
+INFO 2024-12-29 15:24:00,048 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:24:21,436 basehttp "GET /login1/ HTTP/1.1" 200 713
+WARNING 2024-12-29 15:24:23,815 log Not Found: /favicon.ico
+WARNING 2024-12-29 15:24:23,816 basehttp "GET /favicon.ico HTTP/1.1" 404 6777
+INFO 2024-12-29 15:24:36,706 views Connexion réussie pour : ameur
+INFO 2024-12-29 15:24:36,716 basehttp "POST /login1/ HTTP/1.1" 302 0
+INFO 2024-12-29 15:24:36,790 views Utilisateur connecté : ameur
+INFO 2024-12-29 15:24:36,791 basehttp "GET /secure/ HTTP/1.1" 200 241
+INFO 2024-12-29 15:29:17,993 autoreload C:\Users\ameur\recycling_project\recycling\views.py changed, reloading.
+INFO 2024-12-29 15:29:19,797 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:29:41,251 views Connexion réussie pour : ameur
+INFO 2024-12-29 15:29:41,262 basehttp "POST /login1/ HTTP/1.1" 302 0
+INFO 2024-12-29 15:29:41,332 views Utilisateur connecté : ameur
+ERROR 2024-12-29 15:29:41,379 log Internal Server Error: /secure/
+Traceback (most recent call last):
+  File "C:\Users\ameur\recycling_project\myenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ameur\recycling_project\myenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ameur\recycling_project\myenv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ameur\recycling_project\recycling\views.py", line 274, in secure_view
+    log_file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'security.log')
+                    ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'
+ERROR 2024-12-29 15:29:41,382 basehttp "GET /secure/ HTTP/1.1" 500 76365
+INFO 2024-12-29 15:31:15,885 autoreload C:\Users\ameur\recycling_project\recycling\views.py changed, reloading.
+INFO 2024-12-29 15:31:17,091 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:31:21,316 views Utilisateur connecté : ameur
+INFO 2024-12-29 15:31:21,320 basehttp "GET /secure/ HTTP/1.1" 200 23118
+INFO 2024-12-29 15:31:57,585 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2024-12-29 15:32:03,435 basehttp "GET /demande-devis/ HTTP/1.1" 200 4909
+INFO 2024-12-29 15:32:03,589 basehttp "GET /static/recycling/js/demande_devis.js HTTP/1.1" 200 1299
+INFO 2024-12-29 15:32:17,666 basehttp "POST /demande-devis/ HTTP/1.1" 200 17
+INFO 2024-12-29 15:32:20,745 basehttp "GET /demande-devis/ HTTP/1.1" 200 4909
+INFO 2024-12-29 15:32:23,903 basehttp "GET /inventaires/ HTTP/1.1" 200 9018
+INFO 2024-12-29 15:32:31,564 basehttp "POST /inventaires/ HTTP/1.1" 302 0
+INFO 2024-12-29 15:32:31,659 basehttp "GET /inventaires/ HTTP/1.1" 200 9726
+INFO 2024-12-29 15:32:55,701 basehttp "POST /inventaires/ HTTP/1.1" 302 0
+INFO 2024-12-29 15:32:55,786 basehttp "GET /inventaires/ HTTP/1.1" 200 10294
+INFO 2024-12-29 15:33:00,665 basehttp "POST /supprimer_balle/2/ HTTP/1.1" 302 0
+INFO 2024-12-29 15:33:00,759 basehttp "GET /inventaires/ HTTP/1.1" 200 9735
+INFO 2024-12-29 15:33:03,887 basehttp "POST /supprimer_inventaire/2/ HTTP/1.1" 302 0
+INFO 2024-12-29 15:33:03,968 basehttp "GET /inventaires/ HTTP/1.1" 200 9031
+INFO 2024-12-29 15:33:27,238 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4291
+INFO 2024-12-29 15:46:04,521 autoreload C:\Users\ameur\recycling_project\recycling\forms.py changed, reloading.
+INFO 2024-12-29 15:46:06,324 autoreload Watching for file changes with StatReloader
+INFO 2024-12-29 15:56:09,520 autoreload C:\Users\ameur\recycling_project\recycling\views.py changed, reloading.
+INFO 2024-12-29 15:56:11,257 autoreload Watching for file changes with StatReloader

@@ -264,7 +264,7 @@ button[type="submit"]:hover {
 
 /* Bouton de soumission */
 button[type="submit"] {
-    padding: 12px 20px;
+    padding: 12px 20px; 
     font-size: 16px;
     color: #fff;
     background-color: #28a745;
@@ -299,7 +299,7 @@ html, body {
     height: 100%;
     margin: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;/* Ajoute un flex-direction à l'élément parent */
 }
 
 main {

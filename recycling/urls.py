@@ -21,7 +21,8 @@ urlpatterns = [
     path('information_agence/', information_agence, name='information_agence'),
     path('add_and_calculate/', views.add_and_calculate, name='add_and_calculate'),
     path('login/', views.login_view, name='login'),
-   
+     path('secure/', views.secure_view, name='secure_view'),  # Page sécurisée (nécessite d'être connecté)
+    path('login1/', views.login_view, name='login_view'),    # Page de connexion personnalisée
 
 
 ]

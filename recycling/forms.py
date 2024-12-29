@@ -68,7 +68,8 @@ from django import forms
 from django.conf import settings
 
 class TransactionForm(forms.Form):
-    # Champ de sélection pour les matériaux, initialement vide
+    # Champ de sélection pour les matériaux, initialement vide ChoiceField il permet d'avoir un 
+    # menu déoroulant pour les matiéres
     material = forms.ChoiceField(choices=[])
     # Champ pour entrer la quantité de matériau
     quantity = forms.FloatField()
