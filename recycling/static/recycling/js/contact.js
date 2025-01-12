@@ -1,5 +1,5 @@
 document.getElementById('contact-form').addEventListener('submit', function(event) { //  Ajout d'un écouteur d'événement sur le formulaire de contact
-  event.preventDefault();
+  event.preventDefault();//  Empêche le comportement par défaut du formulaire, qui est de recharger la page lors de la soumission.
   const formData = new FormData(this);
   const url = this.getAttribute('data-url');  // Récupère l'attribut data-url du formulaire
 

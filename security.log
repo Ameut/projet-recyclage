@@ -193,3 +193,113 @@ INFO 2024-12-29 15:46:04,521 autoreload C:\Users\ameur\recycling_project\recycli
 INFO 2024-12-29 15:46:06,324 autoreload Watching for file changes with StatReloader
 INFO 2024-12-29 15:56:09,520 autoreload C:\Users\ameur\recycling_project\recycling\views.py changed, reloading.
 INFO 2024-12-29 15:56:11,257 autoreload Watching for file changes with StatReloader
+INFO 2025-01-05 12:36:04,199 autoreload Watching for file changes with StatReloader
+INFO 2025-01-05 12:36:06,637 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2025-01-05 12:36:07,025 basehttp "GET /static/recycling/css/styles.css HTTP/1.1" 200 6333
+INFO 2025-01-05 12:36:07,052 basehttp "GET /static/recycling/images/banniere.jpg HTTP/1.1" 304 0
+INFO 2025-01-05 12:36:07,083 basehttp "GET /media/images_index/nature-3294632_1280_BUPVybb.jpg HTTP/1.1" 200 47553
+INFO 2025-01-05 12:36:07,090 basehttp "GET /media/images_index/industrie-recyclage-plastique-inquiete-pour-son-avenir_620x350_2YH9yvG.jpg HTTP/1.1" 200 41183
+WARNING 2025-01-05 12:36:07,147 log Not Found: /favicon.ico
+WARNING 2025-01-05 12:36:07,148 basehttp "GET /favicon.ico HTTP/1.1" 404 6777
+INFO 2025-01-05 12:36:12,035 basehttp "GET /economie-circulaire/ HTTP/1.1" 200 4517
+INFO 2025-01-05 12:36:12,064 basehttp "GET /media/images_economie_circulaire/Visu-dintro-1.jpg HTTP/1.1" 200 157042
+INFO 2025-01-05 12:36:13,385 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4292
+INFO 2025-01-05 12:36:15,139 basehttp "GET /contact/ HTTP/1.1" 200 4704
+INFO 2025-01-05 12:36:15,159 basehttp "GET /static/recycling/js/contact.js HTTP/1.1" 304 0
+INFO 2025-01-05 12:36:16,303 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4292
+INFO 2025-01-05 12:36:21,236 basehttp "POST /add_and_calculate/ HTTP/1.1" 302 0
+INFO 2025-01-05 12:36:21,249 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4292
+INFO 2025-01-05 12:36:59,711 basehttp "POST /add_and_calculate/ HTTP/1.1" 302 0
+INFO 2025-01-05 12:36:59,724 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4291
+INFO 2025-01-05 12:37:04,028 basehttp "POST /add_and_calculate/ HTTP/1.1" 302 0
+INFO 2025-01-05 12:37:04,038 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4293
+INFO 2025-01-05 12:38:14,763 basehttp "GET /demande-devis/ HTTP/1.1" 200 4909
+INFO 2025-01-05 12:38:14,784 basehttp "GET /static/recycling/js/demande_devis.js HTTP/1.1" 200 1458
+INFO 2025-01-05 12:38:16,369 basehttp "GET /contact/ HTTP/1.1" 200 4704
+INFO 2025-01-05 12:38:17,431 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4293
+INFO 2025-01-05 12:38:18,835 basehttp "GET /economie-circulaire/ HTTP/1.1" 200 4517
+INFO 2025-01-05 12:38:20,071 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2025-01-05 12:38:22,815 basehttp "GET /demande-devis/ HTTP/1.1" 200 4909
+INFO 2025-01-05 12:38:33,984 basehttp "POST /demande-devis/ HTTP/1.1" 200 17
+INFO 2025-01-05 12:38:38,427 basehttp "GET /contact/ HTTP/1.1" 200 4704
+INFO 2025-01-05 12:38:44,761 basehttp "POST /contact/ HTTP/1.1" 200 42
+INFO 2025-01-05 12:38:49,697 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4293
+INFO 2025-01-05 12:38:50,980 basehttp "GET /economie-circulaire/ HTTP/1.1" 200 4517
+INFO 2025-01-05 12:38:51,744 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2025-01-06 21:23:38,204 autoreload Watching for file changes with StatReloader
+INFO 2025-01-06 21:23:52,311 basehttp "GET / HTTP/1.1" 200 5913
+WARNING 2025-01-06 21:23:52,508 log Not Found: /favicon.ico
+WARNING 2025-01-06 21:23:52,510 basehttp "GET /favicon.ico HTTP/1.1" 404 6777
+INFO 2025-01-06 21:23:56,661 basehttp "GET /economie-circulaire/ HTTP/1.1" 200 4517
+INFO 2025-01-06 21:24:02,161 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4293
+INFO 2025-01-06 21:24:08,367 basehttp "POST /add_and_calculate/ HTTP/1.1" 302 0
+INFO 2025-01-06 21:24:08,380 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4292
+INFO 2025-01-06 21:24:10,954 basehttp "GET /contact/ HTTP/1.1" 200 4704
+INFO 2025-01-06 21:24:18,957 basehttp "POST /contact/ HTTP/1.1" 200 42
+INFO 2025-01-06 21:24:22,547 basehttp "GET /contact/ HTTP/1.1" 200 4704
+INFO 2025-01-06 21:24:24,212 basehttp "GET /demande-devis/ HTTP/1.1" 200 4909
+INFO 2025-01-06 21:24:24,251 basehttp "GET /static/recycling/js/demande_devis.js HTTP/1.1" 304 0
+INFO 2025-01-06 21:24:26,734 basehttp "GET /inventaires/ HTTP/1.1" 302 0
+INFO 2025-01-06 21:24:26,740 basehttp "GET /login1/?next=/inventaires/ HTTP/1.1" 200 713
+INFO 2025-01-06 21:24:32,674 views Connexion réussie pour : ameur
+INFO 2025-01-06 21:24:32,680 basehttp "POST /login1/?next=/inventaires/ HTTP/1.1" 302 0
+INFO 2025-01-06 21:24:32,883 views Utilisateur connecté : ameur
+INFO 2025-01-06 21:24:32,897 basehttp "GET /secure/ HTTP/1.1" 200 32150
+INFO 2025-01-06 21:24:38,832 basehttp "GET /inventaires/ HTTP/1.1" 200 9031
+INFO 2025-01-06 21:24:43,172 basehttp "GET /inventaires/ HTTP/1.1" 200 9031
+INFO 2025-01-06 21:24:49,425 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4292
+INFO 2025-01-06 21:24:50,655 basehttp "GET /inventaires/ HTTP/1.1" 200 9031
+INFO 2025-01-06 21:24:51,935 basehttp "GET /contact/ HTTP/1.1" 200 4704
+INFO 2025-01-06 21:24:53,091 basehttp "GET /inventaires/ HTTP/1.1" 200 9031
+INFO 2025-01-06 21:24:54,787 basehttp "GET /demande-devis/ HTTP/1.1" 200 4909
+INFO 2025-01-06 21:24:56,597 basehttp "GET /admin/ HTTP/1.1" 200 18513
+INFO 2025-01-06 21:24:56,663 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-01-06 21:24:56,687 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-01-06 21:24:56,689 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-01-06 21:24:56,689 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-01-06 21:24:56,689 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-01-06 21:24:56,690 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-01-06 21:24:56,704 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-01-06 21:24:56,720 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-01-06 21:24:56,722 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-01-06 21:24:59,883 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2025-01-06 21:25:01,297 basehttp "GET /inventaires/ HTTP/1.1" 200 9031
+INFO 2025-01-06 21:25:03,966 basehttp "GET /admin/ HTTP/1.1" 200 18513
+INFO 2025-01-06 21:25:08,585 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2025-01-06 21:25:10,813 basehttp "GET /economie-circulaire/ HTTP/1.1" 200 4517
+INFO 2025-01-06 21:25:11,768 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2025-01-06 21:33:27,499 basehttp "GET /inventaires/ HTTP/1.1" 200 9031
+INFO 2025-01-06 21:33:33,429 basehttp "POST /inventaires/ HTTP/1.1" 302 0
+INFO 2025-01-06 21:33:33,705 basehttp "GET /inventaires/ HTTP/1.1" 200 9736
+INFO 2025-01-06 21:33:49,440 basehttp "POST /inventaires/ HTTP/1.1" 302 0
+INFO 2025-01-06 21:33:49,630 basehttp "GET /inventaires/ HTTP/1.1" 200 10461
+INFO 2025-01-12 11:07:44,344 autoreload Watching for file changes with StatReloader
+INFO 2025-01-12 11:07:58,816 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2025-01-12 11:07:59,828 basehttp "GET / HTTP/1.1" 200 5913
+INFO 2025-01-12 11:08:00,595 basehttp "GET /media/images_index/industrie-recyclage-plastique-inquiete-pour-son-avenir_620x350_2YH9yvG.jpg HTTP/1.1" 304 0
+INFO 2025-01-12 11:08:00,643 basehttp "GET /media/images_index/nature-3294632_1280_BUPVybb.jpg HTTP/1.1" 304 0
+INFO 2025-01-12 11:08:00,949 basehttp "GET /static/recycling/css/styles.css HTTP/1.1" 200 6379
+WARNING 2025-01-12 11:08:01,190 log Not Found: /favicon.ico
+WARNING 2025-01-12 11:08:01,191 basehttp "GET /favicon.ico HTTP/1.1" 404 6777
+WARNING 2025-01-12 11:08:01,242 log Not Found: /favicon.ico
+WARNING 2025-01-12 11:08:01,243 basehttp "GET /favicon.ico HTTP/1.1" 404 6777
+INFO 2025-01-12 11:08:05,759 basehttp "GET /economie-circulaire/ HTTP/1.1" 200 4517
+INFO 2025-01-12 11:08:05,841 basehttp "GET /media/images_economie_circulaire/Visu-dintro-1.jpg HTTP/1.1" 304 0
+INFO 2025-01-12 11:08:08,407 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4292
+INFO 2025-01-12 11:08:14,660 basehttp "POST /add_and_calculate/ HTTP/1.1" 302 0
+INFO 2025-01-12 11:08:14,677 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4292
+INFO 2025-01-12 11:08:22,248 basehttp "POST /add_and_calculate/ HTTP/1.1" 302 0
+INFO 2025-01-12 11:08:22,291 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4292
+INFO 2025-01-12 11:08:27,483 basehttp "POST /add_and_calculate/ HTTP/1.1" 302 0
+INFO 2025-01-12 11:08:27,498 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4293
+INFO 2025-01-12 11:08:30,156 basehttp "GET /contact/ HTTP/1.1" 200 4704
+INFO 2025-01-12 11:08:39,519 basehttp "POST /contact/ HTTP/1.1" 200 42
+INFO 2025-01-12 11:08:41,999 basehttp "GET /demande-devis/ HTTP/1.1" 200 4909
+INFO 2025-01-12 11:08:42,016 basehttp "GET /static/recycling/js/demande_devis.js HTTP/1.1" 304 0
+INFO 2025-01-12 11:08:46,960 basehttp "GET /contact/ HTTP/1.1" 200 4704
+INFO 2025-01-12 11:09:19,848 basehttp "GET /contact/ HTTP/1.1" 200 4704
+INFO 2025-01-12 11:09:22,915 basehttp "GET /economie-circulaire/ HTTP/1.1" 200 4517
+INFO 2025-01-12 11:09:23,894 basehttp "GET /add_and_calculate/ HTTP/1.1" 200 4293
+INFO 2025-01-12 11:09:24,618 basehttp "GET /contact/ HTTP/1.1" 200 4704
+INFO 2025-01-12 11:09:26,070 basehttp "GET /inventaires/ HTTP/1.1" 200 10461
+INFO 2025-01-12 11:09:28,630 basehttp "GET /demande-devis/ HTTP/1.1" 200 4909

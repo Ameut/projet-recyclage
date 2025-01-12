@@ -32,7 +32,7 @@ class IndexViewTest(TestCase):
         self.assertIn('page_index', response.context)
         self.assertEqual(response.context['page_index'][0], self.page_index)
 
-from django.test import TestCase
+
 from .models import Inventaire, Matiere
 
 class InventaireTestCase(TestCase):
@@ -43,7 +43,7 @@ class InventaireTestCase(TestCase):
     def test_inventaire_creation(self):
         inventaire = Inventaire.objects.get(matiere__nom="Plastique")
         self.assertEqual(inventaire.volume_m3, 100)
-from django.test import TestCase
+
 from .models import DemandeDevis, Localisation
 
 class DevisTestCase(TestCase):
