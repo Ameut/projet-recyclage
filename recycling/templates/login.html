@@ -2,24 +2,105 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connexion</title>
+    <style>
+      /* Variables CSS pour les couleurs et les polices */
+      :root {
+        --primary-color: rgb(22, 198, 15);
+        --error-color: #e74c3c;
+        --background-color: #f4f4f4;
+        --text-color: #333;
+        --font-family: "Arial", sans-serif;
+      }
+
+      /* Réinitialisation des styles par défaut */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-family);
+        background-color: var(--background-color);
+        color: var(--text-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        color: var(--primary-color);
+      }
+
+      form {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        border-color: var(--primary-color);
+        outline: none;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button[type="submit"]:hover {
+        background-color: rgb(24, 236, 49);
+      }
+
+      .error-message {
+        color: var(--error-color);
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h1>Connexion à votre compte</h1>
-    {% if error %}
-    <p style="color: red">{{ error }}</p>
-    {% endif %}
     <form method="POST" action="">
-      {% csrf_token %}
+      <h1>Connexion à votre compte</h1>
+      {% if error %}
+      <p class="error-message">{{ error }}</p>
+      {% endif %} {% csrf_token %}
       <label for="username">Nom d'utilisateur :</label>
-      <input type="text" id="username" name="username" required /><br /><br />
+      <input type="text" id="username" name="username" required />
       <label for="password">Mot de passe :</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        required
-      /><br /><br />
+      <input type="password" id="password" name="password" required />
       <button type="submit">Se connecter</button>
     </form>
   </body>

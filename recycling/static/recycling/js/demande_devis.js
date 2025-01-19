@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('demande-devis-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const formData = new FormData(this);
+        event.preventDefault();// Empêche le comportement par défaut du formulaire, qui est de recharger la page lors de la soumission.
+        const formData = new FormData(this);// Crée un objet FormData pour extraire les données du formulaire
 
         fetch('/demande-devis/', {// Envoi de la requête au server sur l'url récupéré
             method: 'POST',

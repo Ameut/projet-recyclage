@@ -104,11 +104,10 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB', 'recyclage11'),
         'USER': os.getenv('POSTGRES_USER', 'ameur1111'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'loulou11'),
-        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
+        'HOST': os.getenv('POSTGRES_HOST', 'db'),  # 'db' est le nom du service dans docker-compose
         'PORT': os.getenv('POSTGRES_PORT', '5432'),
     }
 }
-
 
 
 

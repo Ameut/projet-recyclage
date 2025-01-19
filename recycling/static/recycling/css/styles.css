@@ -78,7 +78,7 @@ main {
     border-radius: 10px; /* Optionnel : pour des bords arrondis */
 }
 section {
-    margin-bottom: 2em;
+    margin-bottom: 2em;/* Ajoute un espace entre les sections */
     background-color: rgb(233, 229, 229);
     padding: 2em;
     border-radius: 10px;
@@ -313,3 +313,89 @@ footer {
     padding: 1em 0;/
     width: 100%;
 }
+  /* ======================css pour page login inventaire ====================== */
+
+  /* Variables CSS pour les couleurs et les polices */
+:root {
+    --primary-color: #3498db;
+    --error-color: #e74c3c;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --font-family: 'Arial', sans-serif;
+  }
+  
+  /* Réinitialisation des styles par défaut */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: var(--primary-color);
+  }
+  
+  form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+  
+  .error-message {
+    color: var(--error-color);
+    margin-bottom: 20px;
+    text-align: center;
+  }

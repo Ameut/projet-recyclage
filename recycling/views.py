@@ -16,7 +16,7 @@ from .forms import (
     ContactForm, InventaireForm, BalleForm, 
     DemandeDevisForm, TransactionForm
 )
-from .utils import save_transaction, get_total_co2_saved, reset_transactions
+
 
 # ===================== Vues de page de base =====================
 
@@ -56,7 +56,7 @@ def login_view(request):
     return auth_views.LoginView.as_view(template_name='login.html')(request)
 
 
-# ===================== Vues d'inventaire et de gestion des balles =====================
+# ===================== Vues pour les inventaires =====================
 
 # Décorateur pour exiger que l'utilisateur soit authentifié pour accéder à cette vue
 @login_required  
@@ -142,7 +142,7 @@ def telecharger_inventaires(request):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="inventaires.csv"'
     
-    # Initialisation de l'écrivain CSV avec un délimiteur point-virgule
+    # Initialisation de l'écriture CSV avec un délimiteur point-virgule
     writer = csv.writer(response, delimiter=';', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     
     # Écriture de l'en-tête du fichier CSV
@@ -207,7 +207,7 @@ def telecharger_inventaires_pdf(request):
     return response
 
 # ===================== Vue de calcul des transactions CO2 =====================
-
+from .utils import save_transaction, get_total_co2_saved, reset_transactions
 def add_and_calculate(request):# Ajoute une transaction et calcule le CO2
     if request.method == 'POST':# Si la méthode est POST
         form = TransactionForm(request.POST)# Crée un formulaire de transaction avec les données de la requête POST
@@ -223,7 +223,7 @@ def add_and_calculate(request):# Ajoute une transaction et calcule le CO2
         form = TransactionForm()  # Formulaire vide pour GET
     total_co2_saved = get_total_co2_saved() # Récupère le total de CO2 économisé
     # Rend la page avec le total de CO2 économisé
-    return render(request, 'add_and_calculate.html', {'form': form, 'total_co2_saved': total_co2_saved})
+    return render(request, 'add_and_calculate.html', {'form': form, 'total_co2_saved': total_co2_saved})# Rend la page avec le total de CO2 économisé
 
 
 # ===================== Vue de contact =====================
@@ -256,7 +256,7 @@ def information_agence(request, localisation_id):
     return render(request, 'information_agence.html', {'infos': infos, 'localisation': localisation})
 
 # logger de sécurité
-from django.shortcuts import render, redirect
+"""from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
@@ -294,6 +294,6 @@ def login_view(request):
             return redirect('secure_view')  # Redirige vers la page sécurisée
         else:
             logger.warning(f"Tentative de connexion échouée pour : {username}")
-            return render(request, 'login.html', {'error': 'Nom d’utilisateur ou mot de passe incorrect.'})
+            return render(request, 'login_view.html', {'error': 'Nom d’utilisateur ou mot de passe incorrect.'})
     
-    return render(request, 'login.html')  # Affiche la page de connexion
+    return render(request, 'login_view.html')  # Affiche la page de connexion"""""
